@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Shamal Freeze</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: peachpuff;
+                overflow: hidden;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: bisque;
+                padding: 20px 20px 40px 20px;
+                border: 1px solid;
+                border-radius: 10px;
+            }
+
+            button {
+                background-color: burlywood;
+                cursor: pointer;
+                padding: 15px 20px;
+                font-size: 18px;
+                border: none;
+                border-radius: 5px;
+                position: relative;
+            }
+
+            button:hover {
+                background-color: rgb(123, 102, 75);
+            }
+
+            button:active {
+                background-color: rgb(85, 62, 6);
+            }
+
+            .buttonContainer {
+                display: flex;
+                justify-content: center;
+                gap: 4ex;
+            }
+
+            #option label {
+                margin-left: 9px;
+            }
+
+            h1 {
+                margin-left: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <h1>Assalamualaikum Afnan</h1>
+            </div>
+
+            <div id="option">
+                <label>nak picik-picik kote sikit boleh?</label>
+                <br><br>
+                <div class="buttonContainer">
+                    <button class="button" id="yes" onclick="navigateToPage('final.html')">Boleh</button>
+                    <button class="button" id="no">Tak Boleh</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Move the "no" button
+            document.getElementById("no").onclick = moveButton;
+
+            function moveButton() {
+                const button = document.getElementById('no');
+                const randomLeft = Math.random() * 400 - 100;
+                const randomTop = Math.random() * 400 - 100;
+                button.style.transform = `translate(${randomLeft}px, ${randomTop}px)`;
+            }
+
+            // Navigate to a new page
+            function navigateToPage(page) {
+                window.location.href = page; // Use the passed parameter to navigate
+            }
+        </script>
+    </body>
+</html>
